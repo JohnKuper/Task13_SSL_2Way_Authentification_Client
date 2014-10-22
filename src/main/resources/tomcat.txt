@@ -1,0 +1,6 @@
+keytool -genkey -dname "cn=tomcat,ou=epam,o=epam,L=unspec, st=unspec, c=RU"
+-alias tomcat -keypass password -keystore tomcat.jks -storepass password  (tomcat.jks)
+
+keytool -export -keystore tomcat.jks -alias tomcat -storepass password -file tomcat.cer  (tomcat.cer)
+
+keytool -import -keystore tomcattrust.jks -file client.cer -storepass password  (tomcattrust.jks)
